@@ -8,8 +8,10 @@ public class GameManager : MonoBehaviour
     static GameManager gameManager;
     public static GameManager Instance { get { return gameManager; } }
     private int currentScore = 0;
+    private int maxScore = 0;
     UIManager uiManager;
     public UIManager UIManager { get { return uiManager; } }
+    private const string FlappyBestScoreKey = "FlappyBestScore";
     private void Awake()
     {
         gameManager = this;
@@ -21,8 +23,8 @@ public class GameManager : MonoBehaviour
     }
     public void GameOver()
     {
-        Debug.Log("게임오버");
-        uiManager.SetRestart();
+        PlayerPrefs.SetInt(FlappyBestScoreKey, currentScore);
+        uiManager.SetRestart(currentScore);
     }
     public void RestartGame()
     {
