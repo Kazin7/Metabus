@@ -97,3 +97,8 @@ InitTestScene*.unity*
 
 # Auto-generated scenes by play mode tests
 /[Aa]ssets/[Ii]nit[Tt]est[Ss]cene*.unity*
+
+# === 사용자 정의 무시 경로 ===
+# 외부 에셋과 스프라이트 리소스 제외
+Assets/Externals/
+Assets/Sprites/
